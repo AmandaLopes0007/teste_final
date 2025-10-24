@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Publicacao;
+use App\Models\like;
+use App\Models\deslike;
 
 class PublicacaoController extends Controller
 {
@@ -13,7 +15,9 @@ class PublicacaoController extends Controller
     public function index()
     {
         $publicacoes = Publicacao::all();
-        return view('index', compact('publicacoes'));
+        $likes = Like::all();
+        $deslikes = Deslike::all();
+        return view('index', compact('publicacoes', 'likes', 'deslikes'));
     }
 
     /**

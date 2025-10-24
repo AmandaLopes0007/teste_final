@@ -15,26 +15,37 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
    <body class="font-sans">
-        <div class="flex-grow container-none mx-auto px-12 py-8"></div>
+        <div class="flex-grow container-none mx-auto px-12 py-8">
             <div class="grid grid-cols-4 w-full gap-10">
-                <div>
-                    <p>perfil</p>
+                <div class="items-center">
+                    <div class='flex justify-center h-79'>
+                        <img src="/imagens/logo/logo_sabor_do_brasil.png" alt="Logo" class=" w-24 h-24 rounded-full mb-4 object-cover">
+                    </div>
+                    <div class="text-center">
+                        <h4 class="font-monaco font-bold text-lg">Sabor do Brasil</h4>
+                        <hr class="w-40 border-[1.3px] border-gray-700  text-center mx-auto">
+                    </div>
+
+                       
+                    
                 </div>
-                
+                    
                 <div class='col-span-2 h-screen'>
                     <main>
                         @yield('content')
                     </main>
-
+                    
                 </div>
+
                 <div>
                     <p>entrar</p>
                 </div>
             </div>    
 
         </div>
-
-            <footer class="bg-[#d97014] text-white justify-item-center px-8 py-8">
+        </div>
+            
+            <footer class="bg-[#d97014] text-white justify-item-center px-8 py-8 ">
 
                 <div class="container grid grid-cols-3">
 
@@ -43,17 +54,19 @@
                     </div>
 
                     <div class="flex justify-center pt-1.5 gap-20">
-                        <div>
-                            <img src="imagens\icones\Instagram.svg" alt="Instagram" class="h-7 w-7">
-                        </div>
-                        <div>
-                            <img src="imagens\icones\Twitter.svg" alt="Twitter" class="h-7 w-7">
-                        </div>
-                        <div>
-                            <img src="imagens\icones\Whatsapp.svg" alt="Whatsapp" class="h-7 w-7">
-                        </div>
-                        <div>
-                            <img src="imagens\icones\Globe (1).svg" alt="Globe" class="h-7 w-7">
+                        <div class="flex justify-center pt-1.5 gap-20">
+                            <a href="">
+                                <img src="imagens\icones\Instagram.svg" alt="Instagram" class="h-7 w-7">
+                            </a>
+                            <a href="">
+                                <img src="imagens\icones\Twitter.svg" alt="Twitter" class="h-7 w-7">
+                            </a>
+                            <a href="">
+                                <img src="imagens\icones\Whatsapp.svg" alt="Whatsapp" class="h-7 w-7">
+                            </a>
+                            <a href="">
+                               <img src="imagens\icones\Globe (1).svg" alt="Globe" class="h-7 w-7"> 
+                            </a>
                         </div>
                     </div>
 
