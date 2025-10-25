@@ -16,7 +16,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="font-sans">
+<body class="font-sans ">
     <div class="flex-grow container-none mx-auto px-12 p-1">
         <div class="grid grid-cols-4 w-full gap-10">
             <div class="items-center">
@@ -31,27 +31,23 @@
                     <p class="font-semibold text-md mt-4 text-center">Contagem de like</p>
                     <p class="font-semibold text-md mt-4 text-center">Contagem de deslike</p>
                 </div>
-
-
-
             </div>
 
-            <div class='col-span-2 h-screen'>
+            <div class='col-span-2'>
                 <main>
                     @yield('content')
                 </main>
-
             </div>
 
-            <div>
-                <p>entrar</p>
+            <div class="items-center">
+                <button class="bg-[#d97014] hover:bg-[#b85d10] text-white font-semibold py-2 px-4 rounded">Entrar</button>
             </div>
         </div>
 
     </div>
     </div>
 
-    <footer class="bg-[#d97014] text-white justify-item-center px-8 py-8 ">
+    <footer class="bg-[#d97014] text-white px-8 py-8 flex items-center">
 
         <div class="container grid grid-cols-3">
 
