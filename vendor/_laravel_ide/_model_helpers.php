@@ -308,10 +308,10 @@ namespace App\Models {
     /**
      * App\Models\Publicacao
      *
-     * @property string|null $local
      * @property string|null $updatedAt
      * @property string|null $createdAt
      * @property int|null $empresa_id
+     * @property string|null $local
      * @property string|null $cidade
      * @property string|null $titulo
      * @property string|null $foto
@@ -320,10 +320,10 @@ namespace App\Models {
      * @method static \Illuminate\Database\Eloquent\Builder<Publicacao>|Publicacao whereFoto($value)
      * @method static \Illuminate\Database\Eloquent\Builder<Publicacao>|Publicacao whereTitulo($value)
      * @method static \Illuminate\Database\Eloquent\Builder<Publicacao>|Publicacao whereCidade($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Publicacao>|Publicacao whereLocal($value)
      * @method static \Illuminate\Database\Eloquent\Builder<Publicacao>|Publicacao whereEmpresaId($value)
      * @method static \Illuminate\Database\Eloquent\Builder<Publicacao>|Publicacao whereCreatedat($value)
      * @method static \Illuminate\Database\Eloquent\Builder<Publicacao>|Publicacao whereUpdatedat($value)
-     * @method static \Illuminate\Database\Eloquent\Builder<Publicacao>|Publicacao whereLocal($value)
      * @method static \Illuminate\Database\Eloquent\Builder<Publicacao>|Publicacao newModelQuery()
      * @method static \Illuminate\Database\Eloquent\Builder<Publicacao>|Publicacao newQuery()
      * @method static \Illuminate\Database\Eloquent\Builder<Publicacao>|Publicacao query()
