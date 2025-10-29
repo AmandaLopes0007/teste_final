@@ -4,9 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class like extends Model
+class Like extends Model
 {
-    protected $table = 'likes';
+    protected $table = 'like';
     protected $fillable = ['publicacao_id', 'createdAt', 'updatedAt'];
     public $timestamps = false;
 }

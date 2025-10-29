@@ -14,8 +14,9 @@ Route::middleware('auth')->group(function () {
     Route::resource('empresas', EmpresaController::class);
     Route::resource('publicacoes', PublicacaoController::class);
 
-    // Route::post('/publicacoes/{publicacao}/like', [PublicacaoController::class, 'like'])->name('publicacoes.like');
-    // Route::post('/publicacoes/{publicacao}/dislike', [PublicacaoController::class, 'deslike'])->name('publicacoes.dislike');
+    Route::post('/publicacao/{id}/like', [PublicacaoController::class, 'like'])->name('like')->middleware('auth');
+    Route::post('/publicacao/{id}/dislike', [PublicacaoController::class, 'dislike'])->name('dislike')->middleware('auth');
+    
 });
 
 Route::get('/publicacoes', [PublicacaoController::class, 'index'])->name('publicacoes.index');

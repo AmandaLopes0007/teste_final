@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Publicacao;
+use App\Models\Like;
+use App\Models\Deslike;
 
 class PublicacaoController extends Controller
 {
@@ -11,8 +13,8 @@ class PublicacaoController extends Controller
      * Display a listing of the resource.
      */
     public function index()
-    {   
-        $publicacoes = Publicacao::all();
+    {
+        $publicacoes = Publicacao::withCount(['like', 'dislike'])->get();
         return view('index', compact('publicacoes'));
     }
 
