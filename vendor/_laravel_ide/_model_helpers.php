@@ -318,8 +318,8 @@ namespace App\Models {
      * @property int $id
      * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Like> $like
      * @property-read int|null $like_count
-     * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Deslike> $dislike
-     * @property-read int|null $dislike_count
+     * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Deslike> $deslike
+     * @property-read int|null $deslike_count
      * @method static \Illuminate\Database\Eloquent\Builder<Publicacao>|Publicacao whereId($value)
      * @method static \Illuminate\Database\Eloquent\Builder<Publicacao>|Publicacao whereFoto($value)
      * @method static \Illuminate\Database\Eloquent\Builder<Publicacao>|Publicacao whereTitulo($value)
@@ -631,24 +631,28 @@ namespace App\Models {
     /**
      * App\Models\User
      *
+     * @property string|null $foto
      * @property \Illuminate\Support\Carbon|null $updated_at
      * @property \Illuminate\Support\Carbon|null $created_at
      * @property string|null $remember_token
      * @property string $password
      * @property \Illuminate\Support\Carbon|null $email_verified_at
      * @property string $email
+     * @property string $nickname
      * @property string $name
      * @property int $id
      * @property-read \Illuminate\Database\Eloquent\Collection<int, \Illuminate\Notifications\DatabaseNotification> $notifications
      * @property-read int|null $notifications_count
      * @method static \Illuminate\Database\Eloquent\Builder<User>|User whereId($value)
      * @method static \Illuminate\Database\Eloquent\Builder<User>|User whereName($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<User>|User whereNickname($value)
      * @method static \Illuminate\Database\Eloquent\Builder<User>|User whereEmail($value)
      * @method static \Illuminate\Database\Eloquent\Builder<User>|User whereEmailVerifiedAt($value)
      * @method static \Illuminate\Database\Eloquent\Builder<User>|User wherePassword($value)
      * @method static \Illuminate\Database\Eloquent\Builder<User>|User whereRememberToken($value)
      * @method static \Illuminate\Database\Eloquent\Builder<User>|User whereCreatedAt($value)
      * @method static \Illuminate\Database\Eloquent\Builder<User>|User whereUpdatedAt($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<User>|User whereFoto($value)
      * @method static \Illuminate\Database\Eloquent\Builder<User>|User newModelQuery()
      * @method static \Illuminate\Database\Eloquent\Builder<User>|User newQuery()
      * @method static \Illuminate\Database\Eloquent\Builder<User>|User query()
@@ -952,12 +956,14 @@ namespace App\Models {
     /**
      * App\Models\Deslike
      *
+     * @property int $user_id
      * @property string|null $updatedAt
      * @property string|null $createdAt
      * @property int|null $publicacao_id
      * @method static \Illuminate\Database\Eloquent\Builder<Deslike>|Deslike wherePublicacaoId($value)
      * @method static \Illuminate\Database\Eloquent\Builder<Deslike>|Deslike whereCreatedat($value)
      * @method static \Illuminate\Database\Eloquent\Builder<Deslike>|Deslike whereUpdatedat($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Deslike>|Deslike whereUserId($value)
      * @method static \Illuminate\Database\Eloquent\Builder<Deslike>|Deslike newModelQuery()
      * @method static \Illuminate\Database\Eloquent\Builder<Deslike>|Deslike newQuery()
      * @method static \Illuminate\Database\Eloquent\Builder<Deslike>|Deslike query()
@@ -1261,12 +1267,14 @@ namespace App\Models {
     /**
      * App\Models\Like
      *
+     * @property int $user_id
      * @property string|null $updatedAt
      * @property string|null $createdAt
      * @property int|null $publicacao_id
      * @method static \Illuminate\Database\Eloquent\Builder<Like>|Like wherePublicacaoId($value)
      * @method static \Illuminate\Database\Eloquent\Builder<Like>|Like whereCreatedat($value)
      * @method static \Illuminate\Database\Eloquent\Builder<Like>|Like whereUpdatedat($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Like>|Like whereUserId($value)
      * @method static \Illuminate\Database\Eloquent\Builder<Like>|Like newModelQuery()
      * @method static \Illuminate\Database\Eloquent\Builder<Like>|Like newQuery()
      * @method static \Illuminate\Database\Eloquent\Builder<Like>|Like query()

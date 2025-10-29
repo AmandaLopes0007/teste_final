@@ -23,17 +23,44 @@
         </div>
 
         <div class="flex gap-4 mt-4 items-center">
-            <button command="show-modal" commandfor="dialog" type="button">
-               @php
-             $liked = 
-            @endphp 
-            <img src=" /imagens/icones/flecha_cima_vazia.svg" alt="Like" class="w-6 h-6">
-            </button>
+            <form action="{{ route('publicacao.like', $publicacao) }}" method="post">
+                @csrf
+                @auth
+                <button class="flex items-center gap-1" type="submit">
+                    @php
+                    $liked = $publicacao->like->where('user_id', auth()->id())->count() > 0;
+                    @endphp
+                    <img src="{{ asset($liked ? '/imagens/icones/flecha_cima_cheia.svg' : '/imagens/icones/flecha_cima_vazia.svg') }}" alt="Like" class="w-6 h-6">
+                    <span class="text-sm">{{ $publicacao->like_count }}</span>
+                </button>
+                @endauth
+                @guest
+                <button class="flex items-center gap-1" type="button" command="show-modal" commandfor="dialog">
+                    <img src="{{ asset('/imagens/icones/flecha_cima_vazia.svg') }}" alt="Like" class="w-6 h-6">
+                    <span class="text-sm">{{ $publicacao->like_count }}</span>
+                </button>
+                @endguest
+            </form>
 
-            <button command="show-modal" commandfor="dialog" type="button">
-                <img src="/imagens/icones/flecha_baixo_vazia.svg" alt="Dislike" class="w-6 h-6">
-            </button>
-            
+            <form action="{{ route('publicacao.deslike', $publicacao) }}" method="post">
+                @csrf
+                @auth
+                <button class="flex items-center gap-1" type="submit">
+                    @php
+                    $desliked = $publicacao->deslike->where('user_id', auth()->id())->count() > 0;
+                    @endphp
+                    <img src="{{ asset($desliked ? '/imagens/icones/flecha_baixo_cheia.svg' : '/imagens/icones/flecha_baixo_vazia.svg') }}" class="w-6 h-6">
+                    <span class="text-sm">{{ $publicacao->deslike_count }}</span>
+                </button>
+                @endauth
+                @guest
+                <button class="flex items-center gap-1" type="button" command="show-modal" commandfor="dialog">
+                    <img src="{{ asset('/imagens/icones/flecha_baixo_vazia.svg') }}" class="w-6 h-6">
+                    <span class="text-sm">{{ $publicacao->deslike_count }}</span>
+                </button>
+                @endguest
+            </form>
+
         </div>
     </div>
     @endforeach

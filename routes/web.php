@@ -11,13 +11,12 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-    Route::resource('empresas', EmpresaController::class);
-    Route::resource('publicacoes', PublicacaoController::class);
 
-    Route::post('/publicacao/{id}/like', [PublicacaoController::class, 'like'])->name('like')->middleware('auth');
-    Route::post('/publicacao/{id}/dislike', [PublicacaoController::class, 'dislike'])->name('dislike')->middleware('auth');
-    
+    Route::post('/publicacao/{publicacao}/like', [PublicacaoController::class, 'like'])->name('publicacao.like');
+    Route::post('/publicacao/{publicacao}/deslike', [PublicacaoController::class, 'deslike'])->name('publicacao.deslike');
+
 });
+
 
 Route::get('/publicacoes', [PublicacaoController::class, 'index'])->name('publicacoes.index');
 

@@ -10,14 +10,15 @@ class Publicacao extends Model
     protected $fillable = ['foto', 'titulo', 'cidade', 'local', 'createdAt', 'updatedAt', 'empresa_id'];
     public $timestamps = false;
 
+
     public function like()
     {
         return $this->hasMany(Like::class);
     }
 
-    public function dislike()
+
+    public function deslike()
     {
         return $this->hasMany(Deslike::class);
     }
 }
-
