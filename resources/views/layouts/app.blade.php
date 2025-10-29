@@ -34,13 +34,16 @@
                 <div class="text-center">
                     <hr class="w-40 border-[1.3px] border-orange-500 mx-auto">
                 </div>
-                <div class="grid grid-cols-2 mt-6 justify-center w-full">
-                    <p class="font-semibold text-md mt-4 text-center">
-                        Total de likes: {{ $publicacoes->sum('like_count') }}
-                    </p>
-                    <p class="font-semibold text-md mt-4 text-center">
-                        Total de deslikes: {{ $publicacoes->sum('deslike_count') }}
-                    </p>
+                <div class="grid grid-cols-2 gap-4 mt-6 w-full text-center">
+                    <div class=" flex flex-col items-center">
+                        <p class="text-2xl font-bold ">{{ $publicacoes->sum('like_count') }}</p>
+                        <p class="text-sm font-medium">Total de likes</p>
+                    </div>
+
+                    <div class="flex flex-col items-center">
+                        <p class="text-2xl font-bold">{{ $publicacoes->sum('deslike_count') }}</p>
+                        <p class="text-sm font-medium">Total de deslikes</p>
+                    </div>
                 </div>
             </div>
 

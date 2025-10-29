@@ -21,4 +21,5 @@ class Publicacao extends Model
     {
         return $this->hasMany(Deslike::class);
     }
+
 }
